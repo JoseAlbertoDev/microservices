@@ -2,8 +2,6 @@
  * 
  *  $Id$
  * 
- * Copyright 2018 INGENIA S.A. All rights reserved.
- * 
  * $Date$ 
  * $Revision$
  * $URL$ 
