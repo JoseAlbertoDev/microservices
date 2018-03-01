@@ -44,4 +44,5 @@ public class TablonController {
 	public List<Notas> getNotas(){
 		return feignNotas.getNotas();
 	}
+	
 }

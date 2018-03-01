@@ -43,7 +43,7 @@ public class NotasService implements INotasService {
 
 	@Override
 	public List<Notas> getNotasByUsername(String username) {
-		return notasRepository.findNotasByUsernameOrderByUsernameAsc(username);
+		return notasRepository.findNotasByUsernameOrderByCabeceraAsc(username);
 	}
 
 	@Override

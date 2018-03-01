@@ -46,7 +46,7 @@ public class NotasApi implements INotasApi {
 		ResponseEntity<List<Notas>> response = null;
 		lNotas = notasService.getListNotas();
 		if (lNotas != null && !lNotas.isEmpty()) {
-			return crearRespuesta(lNotas, HttpStatus.OK);
+			response = crearRespuesta(lNotas, HttpStatus.OK);
 		}			
 		response = crearRespuesta(lNotas, HttpStatus.NO_CONTENT);
 		return response;

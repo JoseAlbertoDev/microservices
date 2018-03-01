@@ -28,6 +28,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NotasRepository extends MongoRepository<Notas, String> {
 	
-	public List<Notas> findNotasByUsernameOrderByUsernameAsc(String username);
+	public List<Notas> findNotasByUsernameOrderByCabeceraAsc(String username);
 
 }
