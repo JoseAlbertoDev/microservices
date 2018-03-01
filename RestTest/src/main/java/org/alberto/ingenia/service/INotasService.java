@@ -2,8 +2,6 @@
  * 
  *  $Id$
  * 
- * Copyright 2018 INGENIA S.A. All rights reserved.
- * 
  * $Date$ 
  * $Revision$
  * $URL$ 
@@ -30,5 +28,7 @@ public interface INotasService {
 	public List<Notas> getListNotas();
 	
 	public List<Notas> getNotasByUsername(String username);
+	
+	public Notas saveNota(Notas nota);
 	
 }

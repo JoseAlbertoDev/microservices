@@ -2,8 +2,6 @@
  * 
  *  $Id$
  * 
- * Copyright 2018 INGENIA S.A. All rights reserved.
- * 
  * $Date$ 
  * $Revision$
  * $URL$ 
@@ -23,11 +21,9 @@ import org.alberto.ingenia.model.Notas;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author jamartin
@@ -39,20 +35,20 @@ public interface IRestApi {
 			value = {"/getAllNotes"},
 			produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
 			method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<List<Notas>> getListaConTodasLasNotas();
+	public ResponseEntity<List<Notas>> getListaConTodasLasNotas();
 	
 	@RequestMapping(
 			value = {"/getAllNotesOf"},
 			produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
 			method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<List<Notas>> getListaConLasNotasDeUnUsuario(@RequestParam("username") String username);
+	public ResponseEntity<List<Notas>> getListaConLasNotasDeUnUsuario(@RequestParam("username") String username);
 	
 	@RequestMapping(
-			value = {"/saveNota"},
+			value = {"/saveNote"},
 			consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
 			produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
 			method = RequestMethod.POST)
-	public @ResponseBody ResponseEntity<Notas> saveNota(@RequestBody Notas nota);
+	public ResponseEntity<Notas> saveNota(Notas nota);
 	
-	public <T> ResponseEntity<List<T>> crearRepuesta(List<T> lista, HttpStatus status);
+	public <T> ResponseEntity<T> crearRespuesta(T lista, HttpStatus status);
 }

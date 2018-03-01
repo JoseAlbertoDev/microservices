@@ -2,8 +2,6 @@
  * 
  *  $Id$
  * 
- * Copyright 2018 INGENIA S.A. All rights reserved.
- * 
  * $Date$ 
  * $Revision$
  * $URL$ 
@@ -46,6 +44,11 @@ public class NotasService implements INotasService {
 	@Override
 	public List<Notas> getNotasByUsername(String username) {
 		return notasRepository.findNotasByUsernameOrderByUsernameAsc(username);
+	}
+
+	@Override
+	public Notas saveNota(Notas nota) {
+		return notasRepository.save(nota);
 	}
 
 }

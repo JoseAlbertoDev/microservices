@@ -2,8 +2,6 @@
  * 
  *  $Id$
  * 
- * Copyright 2018 INGENIA S.A. All rights reserved.
- * 
  * $Date$ 
  * $Revision$
  * $URL$ 
@@ -23,9 +21,9 @@ import java.util.List;
 import org.alberto.ingenia.controller.IRestApi;
 import org.alberto.ingenia.model.Notas;
 import org.alberto.ingenia.service.INotasService;
-import org.apache.http.protocol.HTTP;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -45,28 +43,45 @@ public class RestApi implements IRestApi {
 	@Override
 	public ResponseEntity<List<Notas>> getListaConTodasLasNotas() {
 		List<Notas> lNotas = new ArrayList<>();
+		ResponseEntity<List<Notas>> response = null;
 		lNotas = notasService.getListNotas();
 		if (lNotas != null && !lNotas.isEmpty()) {
-			return crearRepuesta(lNotas, HttpStatus.OK);
+			return crearRespuesta(lNotas, HttpStatus.OK);
 		}			
-		return crearRepuesta(lNotas, HttpStatus.INTERNAL_SERVER_ERROR);
+		response = crearRespuesta(lNotas, HttpStatus.NO_CONTENT);
+		return response;
 	}
 
 	@Override
 	public ResponseEntity<List<Notas>> getListaConLasNotasDeUnUsuario(String username) {
 		List<Notas> lNotas = new ArrayList<>();
-		ResponseEntity<List<Notas>> response = new ResponseEntity<List<Notas>>(lNotas, HttpStatus.INTERNAL_SERVER_ERROR);
+		ResponseEntity<List<Notas>> response = null;
+		if (username != null && !username.isEmpty()) {
+			lNotas = notasService.getNotasByUsername(username);
+			if (lNotas != null && !lNotas.isEmpty()) {
+				response = crearRespuesta(lNotas, HttpStatus.OK);
+			}
+			response = crearRespuesta(lNotas, HttpStatus.NO_CONTENT);
+		}
+		response = crearRespuesta(lNotas, HttpStatus.BAD_REQUEST);
 		return response;
 	}
 
 	@Override
-	public ResponseEntity<Notas> saveNota(Notas nota) {
-		return null;
+	public ResponseEntity<Notas> saveNota(@RequestBody Notas nota) {
+		Notas newNota = null;
+		ResponseEntity<Notas> response = null;
+		if(nota != null) {
+			newNota = notasService.saveNota(nota);
+			response = crearRespuesta(newNota, HttpStatus.OK);
+		}
+		response = crearRespuesta(newNota, HttpStatus.BAD_REQUEST);
+		return response;
 	}
 
 	@Override
-	public <T> ResponseEntity<List<T>> crearRepuesta(List<T> lista, HttpStatus status) {
-		ResponseEntity<List<T>> response = new ResponseEntity<List<T>>(lista, status);
+	public <T> ResponseEntity<T> crearRespuesta(T lista, HttpStatus status) {
+		ResponseEntity<T> response = new ResponseEntity<T>(lista, status);
 		return response;
 	}
 }
