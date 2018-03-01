@@ -13,21 +13,22 @@
  *
  *
  * ***************************************************************************/
-package org.alberto.ingenia.repository;
+package org.alberto.ingenia.notas.service;
 
 import java.util.List;
 
-import org.alberto.ingenia.model.Notas;
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
+import org.alberto.ingenia.notas.model.Notas;
 
 /**
  * @author jamartin
  *
  */
-@Repository
-public interface NotasRepository extends MongoRepository<Notas, String> {
+public interface INotasService {
 	
-	public List<Notas> findNotasByUsernameOrderByUsernameAsc(String username);
-
+	public List<Notas> getListNotas();
+	
+	public List<Notas> getNotasByUsername(String username);
+	
+	public Notas saveNota(Notas nota);
+	
 }

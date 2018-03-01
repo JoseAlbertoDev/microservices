@@ -13,7 +13,7 @@
  *
  *
  * ***************************************************************************/
-package org.alberto.ingenia.model;
+package org.alberto.ingenia.notas.model;
 
 import javax.validation.constraints.NotNull;
 

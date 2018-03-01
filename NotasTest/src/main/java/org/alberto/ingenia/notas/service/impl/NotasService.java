@@ -13,13 +13,13 @@
  *
  *
  * ***************************************************************************/
-package org.alberto.ingenia.service.impl;
+package org.alberto.ingenia.notas.service.impl;
 
 import java.util.List;
 
-import org.alberto.ingenia.model.Notas;
-import org.alberto.ingenia.repository.NotasRepository;
-import org.alberto.ingenia.service.INotasService;
+import org.alberto.ingenia.notas.model.Notas;
+import org.alberto.ingenia.notas.repository.NotasRepository;
+import org.alberto.ingenia.notas.service.INotasService;
 import org.springframework.stereotype.Service;
 
 /**

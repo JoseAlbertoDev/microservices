@@ -13,14 +13,14 @@
  *
  *
  * ***************************************************************************/
-package org.alberto.ingenia.controller.impl;
+package org.alberto.ingenia.notas.controller.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.alberto.ingenia.controller.IRestApi;
-import org.alberto.ingenia.model.Notas;
-import org.alberto.ingenia.service.INotasService;
+import org.alberto.ingenia.notas.controller.INotasApi;
+import org.alberto.ingenia.notas.model.Notas;
+import org.alberto.ingenia.notas.service.INotasService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,11 +31,11 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController
-public class RestApi implements IRestApi {
+public class NotasApi implements INotasApi {
 	
 	private final INotasService notasService;
 	
-	public RestApi(INotasService notasService) {
+	public NotasApi(INotasService notasService) {
 		super();
 		this.notasService = notasService;
 	}

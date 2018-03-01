@@ -1,8 +1,7 @@
 spring:
   application:
-    name: notas
+    name: tablon
   cloud:
     config:
       fail-fast: true
       uri: http://localhost:8000
-      

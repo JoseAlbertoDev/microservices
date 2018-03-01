@@ -19,9 +19,10 @@ package org.alberto.ingenia;
 
 import java.util.List;
 
-import org.alberto.ingenia.model.Notas;
-import org.alberto.ingenia.service.INotasService;
 import static org.junit.Assert.*;
+
+import org.alberto.ingenia.notas.model.Notas;
+import org.alberto.ingenia.notas.service.INotasService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

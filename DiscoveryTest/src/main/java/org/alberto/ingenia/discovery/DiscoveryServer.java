@@ -13,24 +13,22 @@
  *
  *
  * ***************************************************************************/
-package org.alberto.ingenia;
+package org.alberto.ingenia.discovery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * @author jamartin
  *
  */
 @SpringBootApplication
-@EnableEurekaClient
-@EnableMongoRepositories
-public class RestServer {
+@EnableEurekaServer
+public class DiscoveryServer {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(RestServer.class, args);
+		SpringApplication.run(DiscoveryServer.class, args);
 	}
 	
 }
