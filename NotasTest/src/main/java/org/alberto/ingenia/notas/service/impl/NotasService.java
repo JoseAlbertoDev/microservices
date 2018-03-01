@@ -37,7 +37,7 @@ public class NotasService implements INotasService {
 	}
 	
 	@Override
-	public List<Notas> getListNotas() {
+	public List<Notas> getListNotas() {		
 		return notasRepository.findAll();
 	}
 

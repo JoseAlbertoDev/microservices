@@ -2,8 +2,6 @@
  * 
  *  $Id$
  * 
- * Copyright 2018 INGENIA S.A. All rights reserved.
- * 
  * $Date$ 
  * $Revision$
  * $URL$ 
@@ -22,6 +20,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 import org.alberto.ingenia.modelos.Notas;
+import org.alberto.ingenia.notas.NotasServer;
 import org.alberto.ingenia.notas.service.INotasService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,8 +34,8 @@ import org.springframework.test.context.junit4.SpringRunner;
  *
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest
-public class RestServerTest {
+@SpringBootTest(classes = NotasServer.class)
+public class NotasServerTest {
 	
 	@Autowired
 	private INotasService notasService;
