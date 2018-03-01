@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.alberto.ingenia.notas.controller.INotasApi;
-import org.alberto.ingenia.notas.model.Notas;
+import org.alberto.ingenia.modelos.Notas;
 import org.alberto.ingenia.notas.service.INotasService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

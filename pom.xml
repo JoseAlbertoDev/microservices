@@ -46,5 +46,6 @@
 		<module>ConfigTest</module>
 		<module>DiscoveryTest</module>
 		<module>RestTest</module>
+		<module>DatosComunes</module>
 	</modules>
 </project>

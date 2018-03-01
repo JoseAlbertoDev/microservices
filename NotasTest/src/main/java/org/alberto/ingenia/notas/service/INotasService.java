@@ -17,7 +17,7 @@ package org.alberto.ingenia.notas.service;
 
 import java.util.List;
 
-import org.alberto.ingenia.notas.model.Notas;
+import org.alberto.ingenia.modelos.Notas;
 
 /**
  * @author jamartin

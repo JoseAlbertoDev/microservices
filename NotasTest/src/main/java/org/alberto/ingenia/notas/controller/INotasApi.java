@@ -17,7 +17,7 @@ package org.alberto.ingenia.notas.controller;
 
 import java.util.List;
 
-import org.alberto.ingenia.notas.model.Notas;
+import org.alberto.ingenia.modelos.Notas;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
