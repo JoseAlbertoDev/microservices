@@ -16,6 +16,7 @@
 package org.alberto.ingenia.modelos;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.util.Assert;
 
 /**
  * @author jamartin
@@ -85,6 +86,7 @@ public class Notas {
 	 * @param mensaje Valor a asignar a mensaje
 	 */
 	public void setMensaje(String mensaje) {
+		Assert.notNull(mensaje, "Es necesario introducir un mensaje");
 		this.mensaje = mensaje;
 	}
 
