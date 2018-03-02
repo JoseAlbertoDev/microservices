@@ -49,5 +49,6 @@
 		<module>TablonTest</module>
 		<module>DatosComunes</module>
 		<module>Gateway</module>
+		<module>AuthTest</module>
 	</modules>
 </project>
